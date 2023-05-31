@@ -37,7 +37,7 @@ struct RegisterScreen: View {
                         Image("icon-logo-primary-500")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 50, height: 50)
+                            .frame(width: 45, height: 45)
                     }
                     .padding(.horizontal, 25)
                     .padding(.top,20)
@@ -49,7 +49,7 @@ struct RegisterScreen: View {
                         HStack{
                             Text("Register")
                                 .foregroundColor(.neutral_10)
-                                .font(.system(size: 35, weight: .bold))
+                                .font(.system(size: 35, weight: .medium))
                                 .multilineTextAlignment(.leading)
                                 .minimumScaleFactor(0.5)
                                 .lineLimit(1)
@@ -77,7 +77,7 @@ struct RegisterScreen: View {
                         HStack{
                             Text("For me")
                                 .foregroundColor(accountIsFor == .forMe ? .neutral_10 : .neutral_700)
-                                .font(.system(size: 17, weight: .semibold))
+                                .font(.system(size: 17, weight: .medium))
                         }
                         .frame(maxWidth: .infinity, maxHeight: 65)
                         .background{
@@ -95,7 +95,7 @@ struct RegisterScreen: View {
                         HStack{
                             Text("For my child")
                                 .foregroundColor(accountIsFor == .forMyChild ? .neutral_10 : .neutral_700)
-                                .font(.system(size: 17, weight: .semibold))
+                                .font(.system(size: 17, weight: .medium))
                         }
                         .frame(maxWidth: .infinity, maxHeight: 65)
                         .background{
@@ -117,12 +117,12 @@ struct RegisterScreen: View {
                     
                     //Buttons
                     VStack(spacing: 20){
-                        Button {
-                            
+                        NavigationLink {
+                            AboutYouScreen()
                         } label: {
                             PrimaryPurpleButton(label: "continue")
                         }
-                        
+
                         Text("Or sign up with")
                             .foregroundColor(.neutral_500)
                             .font(.system(size: 15, weight: .medium))

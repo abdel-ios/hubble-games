@@ -18,6 +18,8 @@
 		9E54581C2A27C86D003BA52D /* SecondaryGrayButtonWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458182A27C86D003BA52D /* SecondaryGrayButtonWithIcon.swift */; };
 		9E54581F2A27C893003BA52D /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E54581E2A27C893003BA52D /* WelcomeScreen.swift */; };
 		9E5458232A27C8C4003BA52D /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458222A27C8C4003BA52D /* RegisterScreen.swift */; };
+		9E5458252A27DD69003BA52D /* AboutYouScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458242A27DD69003BA52D /* AboutYouScreen.swift */; };
+		9E843EBE2A27EA690044EABF /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E843EBD2A27EA690044EABF /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		9E5458182A27C86D003BA52D /* SecondaryGrayButtonWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryGrayButtonWithIcon.swift; sourceTree = "<group>"; };
 		9E54581E2A27C893003BA52D /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		9E5458222A27C8C4003BA52D /* RegisterScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
+		9E5458242A27DD69003BA52D /* AboutYouScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutYouScreen.swift; sourceTree = "<group>"; };
+		9E843EBD2A27EA690044EABF /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				9E1152BC2A278FE2004CB460 /* ColorsHelper.swift */,
+				9E843EBD2A27EA690044EABF /* Extentions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				9E5458222A27C8C4003BA52D /* RegisterScreen.swift */,
+				9E5458242A27DD69003BA52D /* AboutYouScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,8 +215,10 @@
 				9E54581C2A27C86D003BA52D /* SecondaryGrayButtonWithIcon.swift in Sources */,
 				9E1152B12A27866B004CB460 /* LaunchScreen.swift in Sources */,
 				9E54581F2A27C893003BA52D /* WelcomeScreen.swift in Sources */,
+				9E843EBE2A27EA690044EABF /* Extentions.swift in Sources */,
 				9E5458232A27C8C4003BA52D /* RegisterScreen.swift in Sources */,
 				9E54581B2A27C86D003BA52D /* PrimaryPurpleButton.swift in Sources */,
+				9E5458252A27DD69003BA52D /* AboutYouScreen.swift in Sources */,
 				9E54581A2A27C86D003BA52D /* SecondaryGrayButton.swift in Sources */,
 				9E5458192A27C86D003BA52D /* SquareGrayButtonWithIcon.swift in Sources */,
 				9E1152AF2A27866B004CB460 /* HubbleApp.swift in Sources */,
