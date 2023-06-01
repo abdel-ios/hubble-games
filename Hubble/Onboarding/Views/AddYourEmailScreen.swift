@@ -84,7 +84,7 @@ struct AddYourEmailScreen: View {
                     .padding(.horizontal, 25)
                     .padding(.bottom,10)
                     
-                    //Text fields
+                    //Text field
                     VStack(spacing: 18){
                        
                         //First name textfield
@@ -106,7 +106,7 @@ struct AddYourEmailScreen: View {
                                 }
                                 TextField("", text: $email)
                                     .foregroundColor(.neutral_10)
-                                    .submitLabel(.next)
+                                    .submitLabel(.done)
                                     .focused($isFocusedOn, equals: .email)
                                     .onSubmit {
                                         withAnimation {

@@ -1,5 +1,5 @@
 //
-//  CreateUsernameScreen.swift
+//  CreatePasswordScreen.swift
 //  Hubble
 //
 //  Created by Abdel Baali on 01/06/23.
@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct CreateUsernameScreen: View {
+struct CreatePasswordScreen: View {
     
     private enum FocusTextField {
-        case username
+        case password
     }
     
     @FocusState private var isFocusedOn: FocusTextField?
     @Environment(\.dismiss) private var dismiss
-    @State private var username: String = ""
+    @State private var password: String = ""
+    @State private var passwordIsVisible: Bool = false
     
     var body: some View {
         NavigationStack{
@@ -49,7 +50,7 @@ struct CreateUsernameScreen: View {
                     VStack(spacing: 15){
                         
                         HStack {
-                            Text("STEP 3/5")
+                            Text("STEP 4/5")
                                 .foregroundColor(.primary_400)
                                 .font(.system(size: 15, weight: .medium))
                             
@@ -60,7 +61,7 @@ struct CreateUsernameScreen: View {
                         
                         
                         HStack{
-                            Text("Create username")
+                            Text("Create password")
                                 .foregroundColor(.neutral_10)
                                 .font(.system(size: 35, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -71,7 +72,7 @@ struct CreateUsernameScreen: View {
                         }
                         
                         HStack{
-                            Text("Create a unique username that represents you so your friends can recognise you")
+                            Text("Let’s put a little security i place, create a password")
                                 .foregroundColor(.neutral_500)
                                 .font(.system(size: 18, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -85,13 +86,13 @@ struct CreateUsernameScreen: View {
                     .padding(.bottom,10)
                     
                     //Text fields
-                    VStack(spacing: 18){
+                    VStack(spacing: 30){
                         
-                        //Username textfield
+                        //password textfield
                         VStack(spacing: 10) {
                             
                             HStack{
-                                Text("Create username")
+                                Text("Create password")
                                     .foregroundColor(.neutral_10)
                                     .font(.system(size: 12,weight: .medium))
                                 
@@ -100,26 +101,44 @@ struct CreateUsernameScreen: View {
                             .padding(.leading,10)
                             
                             ZStack(alignment: .leading) {
-                                if username.isEmpty {
-                                    Text("username")
+                                if password.isEmpty {
+                                    Text("password")
                                         .foregroundColor(.neutral_400)
                                 }
-                                TextField("", text: $username)
-                                    .foregroundColor(.neutral_10)
-                                    .submitLabel(.done)
-                                    .focused($isFocusedOn, equals: .username)
-                                    .onSubmit {
-                                        withAnimation {
-                                            self.isFocusedOn = nil
+                                if passwordIsVisible {
+                                    TextField("", text: $password)
+                                        .foregroundColor(.neutral_10)
+                                        .submitLabel(.done)
+                                        .focused($isFocusedOn, equals: .password)
+                                        .onSubmit {
+                                            withAnimation {
+                                                self.isFocusedOn = nil
+                                            }
                                         }
-                                    }
+                                }else {
+                                    SecureField("", text: $password)
+                                        .foregroundColor(.neutral_10)
+                                        .submitLabel(.done)
+                                        .focused($isFocusedOn, equals: .password)
+                                        .onSubmit {
+                                            withAnimation {
+                                                self.isFocusedOn = nil
+                                            }
+                                        }
+                                }
+                                
+                               
                                 
                                 HStack{
                                     Spacer()
                                     
-                                    Image(systemName: "checkmark.circle")
-                                        .font(.system(size: 19,weight: .regular))
-                                        .foregroundColor(Color.green_300)
+                                    Image(systemName: passwordIsVisible ? "eye" : "eye.slash")
+                                        .font(.system(size: 16,weight: .regular))
+                                        .foregroundColor(passwordIsVisible ? Color.neutral_100 : Color.neutral_500)
+                                        .onTapGesture {
+                                            self.passwordIsVisible.toggle()
+                                           
+                                        }
                                         
                                 }
                             }
@@ -131,20 +150,50 @@ struct CreateUsernameScreen: View {
                                     .foregroundColor(.neutral_800)
                                     .background{
                                         RoundedRectangle(cornerRadius: 15)
-                                            .stroke(isFocusedOn == .username ? Color.primary_300 : .clear, lineWidth: isFocusedOn == .username ? 2.8 : 0)
+                                            .stroke(isFocusedOn == .password ? Color.primary_300 : .clear, lineWidth: isFocusedOn == .password ? 2.8 : 0)
                                             .foregroundColor(.clear)
                                     }
                             }
                             
                         }
                         
-                        //Error text
-                        HStack {
-                            Text("Error text")
-                                .foregroundColor(Color.red_500)
-                                .font(.system(size: 12,weight: .medium))
+                        //Status password
+                        VStack(spacing: 15){
+                            HStack{
+                                Image(systemName: "circle")
+                                    .foregroundColor(Color.neutral_500)
+                                    .font(.system(size: 14,weight: .medium))
+                                
+                                Text("At least one uppercased letter")
+                                    .foregroundColor(Color.neutral_500)
+                                    .font(.system(size: 14,weight: .medium))
+                                
+                                Spacer()
+                            }
                             
-                            Spacer()
+                            HStack{
+                                Image(systemName: "circle")
+                                    .foregroundColor(Color.neutral_500)
+                                    .font(.system(size: 14,weight: .medium))
+                                
+                                Text("Min. 8 characters")
+                                    .foregroundColor(Color.neutral_500)
+                                    .font(.system(size: 14,weight: .medium))
+                                
+                                Spacer()
+                            }
+                            
+                            HStack{
+                                Image(systemName: "circle")
+                                    .foregroundColor(Color.neutral_500)
+                                    .font(.system(size: 14,weight: .medium))
+                                
+                                Text("At least one number or symbol")
+                                    .foregroundColor(Color.neutral_500)
+                                    .font(.system(size: 14,weight: .medium))
+                                
+                                Spacer()
+                            }
                         }
                         .padding(.leading,10)
                         
@@ -157,16 +206,26 @@ struct CreateUsernameScreen: View {
                     Spacer()
                     
                     //Buttons
-                    VStack(spacing: 20){
+                    VStack(spacing: 15){
                         NavigationLink {
-                            CreatePasswordScreen()
+                            ChoseYourPlanScreen()
                         } label: {
                             PrimaryPurpleButton(label: "continue")
                         }
-        
+
+                        
+                        Text("By creating an Hubble account you agree to all of Hubble Terms & Conditions.")
+                            .foregroundColor(Color.neutral_500)
+                            .font(.system(size: 12, weight: .regular))
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.5)
+                            .lineLimit(2)
+                            
+                        
+                        
                     }
                     .padding(.horizontal, 20)
-                    .padding(.bottom,20)
+                    .padding(.bottom,10)
                 }
             }
             .ignoresSafeArea(.keyboard)
@@ -176,13 +235,11 @@ struct CreateUsernameScreen: View {
         .onTapGesture {
             hideKeyboard()
         }
-        
     }
 }
 
-
-struct CreateUsernameScreen_Previews: PreviewProvider {
+struct CreatePasswordScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CreateUsernameScreen()
+        CreatePasswordScreen()
     }
 }

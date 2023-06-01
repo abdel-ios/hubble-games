@@ -21,7 +21,9 @@
 		9E5458232A27C8C4003BA52D /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458222A27C8C4003BA52D /* RegisterScreen.swift */; };
 		9E5458252A27DD69003BA52D /* AboutYouScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458242A27DD69003BA52D /* AboutYouScreen.swift */; };
 		9E5FA23A2A289AC8001B04EC /* CreateUsernameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FA2392A289AC8001B04EC /* CreateUsernameScreen.swift */; };
+		9E5FA23C2A289CD9001B04EC /* CreatePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FA23B2A289CD9001B04EC /* CreatePasswordScreen.swift */; };
 		9E843EBE2A27EA690044EABF /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E843EBD2A27EA690044EABF /* Extentions.swift */; };
+		9E9A2E292A28A45E009A862C /* ChoseYourPlanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9A2E282A28A45E009A862C /* ChoseYourPlanScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,9 @@
 		9E5458222A27C8C4003BA52D /* RegisterScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		9E5458242A27DD69003BA52D /* AboutYouScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutYouScreen.swift; sourceTree = "<group>"; };
 		9E5FA2392A289AC8001B04EC /* CreateUsernameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameScreen.swift; sourceTree = "<group>"; };
+		9E5FA23B2A289CD9001B04EC /* CreatePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordScreen.swift; sourceTree = "<group>"; };
 		9E843EBD2A27EA690044EABF /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		9E9A2E282A28A45E009A862C /* ChoseYourPlanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseYourPlanScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 				9E5458242A27DD69003BA52D /* AboutYouScreen.swift */,
 				9E5224812A28978E004D030B /* AddYourEmailScreen.swift */,
 				9E5FA2392A289AC8001B04EC /* CreateUsernameScreen.swift */,
+				9E5FA23B2A289CD9001B04EC /* CreatePasswordScreen.swift */,
+				9E9A2E282A28A45E009A862C /* ChoseYourPlanScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,8 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5FA23C2A289CD9001B04EC /* CreatePasswordScreen.swift in Sources */,
 				9E54581C2A27C86D003BA52D /* SecondaryGrayButtonWithIcon.swift in Sources */,
 				9E1152B12A27866B004CB460 /* LaunchScreen.swift in Sources */,
+				9E9A2E292A28A45E009A862C /* ChoseYourPlanScreen.swift in Sources */,
 				9E54581F2A27C893003BA52D /* WelcomeScreen.swift in Sources */,
 				9E843EBE2A27EA690044EABF /* Extentions.swift in Sources */,
 				9E5458232A27C8C4003BA52D /* RegisterScreen.swift in Sources */,

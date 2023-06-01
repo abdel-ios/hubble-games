@@ -88,7 +88,7 @@ struct AboutYouScreen: View {
                     //Text field
                     VStack(spacing: 18){
                        
-                        //First name textfield
+                        //Full name textfield
                         VStack(spacing: 10) {
                             
                             HStack{
@@ -107,7 +107,7 @@ struct AboutYouScreen: View {
                                 }
                                 TextField("", text: $firstName)
                                     .foregroundColor(.neutral_10)
-                                    .submitLabel(.next)
+                                    .submitLabel(.done)
                                     .focused($isFocusedOn, equals: .firstName)
                                     .onSubmit {
                                         withAnimation {
