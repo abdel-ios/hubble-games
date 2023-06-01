@@ -118,7 +118,11 @@ struct RegisterScreen: View {
                     //Buttons
                     VStack(spacing: 20){
                         NavigationLink {
-                            AboutYouScreen()
+                            if accountIsFor == .forMe {
+                                AboutYouScreen()
+                            }else {
+                                AboutYourChildScreen()
+                            }
                         } label: {
                             PrimaryPurpleButton(label: "continue")
                         }
