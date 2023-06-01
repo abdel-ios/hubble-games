@@ -183,8 +183,8 @@
 		9E5458202A27C8A7003BA52D /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				9ED55D622A29058200E1B2F1 /* ForChild */,
-				9E5458212A27C8B9003BA52D /* Views */,
+				9ED55D722A291B1300E1B2F1 /* ForUser */,
+				9ED55D622A29058200E1B2F1 /* ForUsersChild */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -203,7 +203,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9ED55D622A29058200E1B2F1 /* ForChild */ = {
+		9ED55D622A29058200E1B2F1 /* ForUsersChild */ = {
+			isa = PBXGroup;
+			children = (
+				9E5458212A27C8B9003BA52D /* Views */,
+			);
+			path = ForUsersChild;
+			sourceTree = "<group>";
+		};
+		9ED55D712A291AF500E1B2F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				9ED55D632A2905B800E1B2F1 /* AboutYourChildScreen.swift */,
@@ -214,7 +222,15 @@
 				9ED55D6D2A2915B000E1B2F1 /* CreatePasswordForChildScreen.swift */,
 				9ED55D6F2A2915FB00E1B2F1 /* ChosePlanForChildScreen.swift */,
 			);
-			path = ForChild;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9ED55D722A291B1300E1B2F1 /* ForUser */ = {
+			isa = PBXGroup;
+			children = (
+				9ED55D712A291AF500E1B2F1 /* Views */,
+			);
+			path = ForUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
