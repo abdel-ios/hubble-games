@@ -1,5 +1,5 @@
 //
-//  CreatePasswordScreen.swift
+//  LoginPasswordScreen.swift
 //  Hubble
 //
 //  Created by Abdel Baali on 01/06/23.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct CreatePasswordScreen: View {
+struct LoginPasswordScreen: View {
     
-    private enum FocusTextField {
-        case password
-    }
+    private enum FocusTextfield {
+         case password
+     }
     
-    @FocusState private var isFocusedOn: FocusTextField?
+    @FocusState private var isFocusedOn: FocusTextfield?
     @Environment(\.dismiss) private var dismiss
     @State private var password: String = ""
     @State private var passwordIsVisible: Bool = false
@@ -36,63 +36,49 @@ struct CreatePasswordScreen: View {
                         
                         Spacer()
                         
-                        Image("icon-logo-primary-500")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 45, height: 45)
                     }
                     .padding(.horizontal, 25)
                     .padding(.top,20)
-                    .padding(.bottom,26)
+                    //.padding(.bottom,5)
                     
+                    
+                    Image("p-image-8")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 75, height: 75)
+                        .padding(.bottom,10)
                     
                     //Texts
                     VStack(spacing: 15){
                         
-                        HStack {
-                            Text("STEP 4/5")
-                                .foregroundColor(.primary_400)
-                                .font(.system(size: 15, weight: .medium))
-                            
-                            
-                            Spacer()
-                        }
-                        .padding(.bottom, 5)
+                        
+                        Text("Welcome back Jhon!")
+                            .foregroundColor(.neutral_10)
+                            .font(.system(size: 32, weight: .medium))
+                            .multilineTextAlignment(.leading)
+                            .minimumScaleFactor(0.5)
+                            .lineLimit(1)
                         
                         
-                        HStack{
-                            Text("Create password")
-                                .foregroundColor(.neutral_10)
-                                .font(.system(size: 35, weight: .medium))
-                                .multilineTextAlignment(.leading)
-                                .minimumScaleFactor(0.5)
-                                .lineLimit(1)
-                            
-                            Spacer()
-                        }
+                        Text("First show as that you are you, enter your password")
+                            .foregroundColor(.neutral_500)
+                            .font(.system(size: 16, weight: .medium))
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.5)
+                            .lineLimit(2)
                         
-                        HStack{
-                            Text("Let’s put a little security i place, create a password")
-                                .foregroundColor(.neutral_500)
-                                .font(.system(size: 18, weight: .medium))
-                                .multilineTextAlignment(.leading)
-                                .minimumScaleFactor(0.5)
-                                .lineLimit(2)
-                            
-                            Spacer()
-                        }
                     }
                     .padding(.horizontal, 25)
                     .padding(.bottom,10)
                     
                     //Text fields
-                    VStack(spacing: 30){
+                    VStack(spacing: 18){
                         
                         //password textfield
                         VStack(spacing: 10) {
                             
                             HStack{
-                                Text("Create password")
+                                Text("Password")
                                     .foregroundColor(.neutral_10)
                                     .font(.system(size: 12,weight: .medium))
                                 
@@ -157,43 +143,12 @@ struct CreatePasswordScreen: View {
                             
                         }
                         
-                        //Status password
-                        VStack(spacing: 15){
-                            HStack{
-                                Image(systemName: "circle")
-                                    .foregroundColor(Color.neutral_500)
-                                    .font(.system(size: 14,weight: .medium))
-                                
-                                Text("At least one uppercased letter")
-                                    .foregroundColor(Color.neutral_500)
-                                    .font(.system(size: 14,weight: .medium))
-                                
-                                Spacer()
-                            }
+                        HStack {
+                            Text("Error text")
+                                .foregroundColor(Color.red_500)
+                            .font(.system(size: 12,weight: .medium))
                             
-                            HStack{
-                                Image(systemName: "circle")
-                                    .foregroundColor(Color.neutral_500)
-                                    .font(.system(size: 14,weight: .medium))
-                                
-                                Text("Min. 8 characters")
-                                    .foregroundColor(Color.neutral_500)
-                                    .font(.system(size: 14,weight: .medium))
-                                
-                                Spacer()
-                            }
-                            
-                            HStack{
-                                Image(systemName: "circle")
-                                    .foregroundColor(Color.neutral_500)
-                                    .font(.system(size: 14,weight: .medium))
-                                
-                                Text("At least one number or symbol")
-                                    .foregroundColor(Color.neutral_500)
-                                    .font(.system(size: 14,weight: .medium))
-                                
-                                Spacer()
-                            }
+                            Spacer()
                         }
                         .padding(.leading,10)
                         
@@ -202,30 +157,44 @@ struct CreatePasswordScreen: View {
                     .padding(.horizontal,20)
                     .padding(.top,20)
                     
+                    HStack{
+                        Button {
+                            
+                        } label: {
+                            HStack {
+                                
+                                Spacer()
+                                
+                                NavigationLink {
+                                   RecoverPasswordScreen()
+                                } label: {
+                                    Text("Forgot password? Recover password")
+                                        .underline()
+                                        .foregroundColor(.primary_400)
+                                    .font(.system(size: 12,weight: .medium))
+                                }
+    
+                                
+                            }
+                            .padding(.horizontal,30)
+                            .padding(.top, 12)
+                        }
+
+                    }
                     
                     Spacer()
                     
                     //Buttons
-                    VStack(spacing: 15){
+                    VStack(spacing: 20){
                         NavigationLink {
-                            ChoseYourPlanScreen()
+                            //AddYourEmailScreen()
                         } label: {
                             PrimaryPurpleButton(label: "continue")
                         }
 
-                        
-                        Text("By creating an Hubble account you agree to all of Hubble Terms & Conditions.")
-                            .foregroundColor(Color.neutral_500)
-                            .font(.system(size: 12, weight: .regular))
-                            .multilineTextAlignment(.center)
-                            .minimumScaleFactor(0.5)
-                            .lineLimit(2)
-                            
-                        
-                        
                     }
                     .padding(.horizontal, 20)
-                    .padding(.bottom,10)
+                    .padding(.bottom,20)
                 }
             }
             .ignoresSafeArea(.keyboard)
@@ -238,8 +207,8 @@ struct CreatePasswordScreen: View {
     }
 }
 
-struct CreatePasswordScreen_Previews: PreviewProvider {
+struct LoginPasswordScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePasswordScreen()
+        LoginPasswordScreen()
     }
 }

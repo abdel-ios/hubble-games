@@ -1,5 +1,5 @@
 //
-//  CreatePasswordScreen.swift
+//  CreateNewPasswordScreen.swift
 //  Hubble
 //
 //  Created by Abdel Baali on 01/06/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreatePasswordScreen: View {
+struct CreateNewPasswordScreen: View {
     
     private enum FocusTextField {
         case password
@@ -28,18 +28,13 @@ struct CreatePasswordScreen: View {
                     //Navigation back button
                     HStack{
                         
-                        Button {
-                            dismiss()
-                        } label: {
-                            SquareGrayButtonWithIcon(icon: "arrow-left")
-                        }
-                        
-                        Spacer()
-                        
                         Image("icon-logo-primary-500")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 45, height: 45)
+                        
+                        Spacer()
+      
                     }
                     .padding(.horizontal, 25)
                     .padding(.top,20)
@@ -49,17 +44,7 @@ struct CreatePasswordScreen: View {
                     //Texts
                     VStack(spacing: 15){
                         
-                        HStack {
-                            Text("STEP 4/5")
-                                .foregroundColor(.primary_400)
-                                .font(.system(size: 15, weight: .medium))
-                            
-                            
-                            Spacer()
-                        }
-                        .padding(.bottom, 5)
-                        
-                        
+            
                         HStack{
                             Text("Create password")
                                 .foregroundColor(.neutral_10)
@@ -72,7 +57,7 @@ struct CreatePasswordScreen: View {
                         }
                         
                         HStack{
-                            Text("Let’s put a little security i place, create a password")
+                            Text("Let’s put a little security i place, create a new password for your account.")
                                 .foregroundColor(.neutral_500)
                                 .font(.system(size: 18, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -208,24 +193,14 @@ struct CreatePasswordScreen: View {
                     //Buttons
                     VStack(spacing: 15){
                         NavigationLink {
-                            ChoseYourPlanScreen()
+                            
                         } label: {
                             PrimaryPurpleButton(label: "continue")
                         }
 
-                        
-                        Text("By creating an Hubble account you agree to all of Hubble Terms & Conditions.")
-                            .foregroundColor(Color.neutral_500)
-                            .font(.system(size: 12, weight: .regular))
-                            .multilineTextAlignment(.center)
-                            .minimumScaleFactor(0.5)
-                            .lineLimit(2)
-                            
-                        
-                        
                     }
                     .padding(.horizontal, 20)
-                    .padding(.bottom,10)
+                    .padding(.bottom,20)
                 }
             }
             .ignoresSafeArea(.keyboard)
@@ -238,8 +213,8 @@ struct CreatePasswordScreen: View {
     }
 }
 
-struct CreatePasswordScreen_Previews: PreviewProvider {
+struct CreateNewPasswordScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePasswordScreen()
+        CreateNewPasswordScreen()
     }
 }

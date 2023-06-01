@@ -1,22 +1,21 @@
 //
-//  AboutYouScreen.swift
+//  RecoverPasswordScreen.swift
 //  Hubble
 //
-//  Created by Abdel Baali on 31/05/23.
+//  Created by Abdel Baali on 01/06/23.
 //
 
 import SwiftUI
 
-struct AboutYouScreen: View {
+struct RecoverPasswordScreen: View {
     
-   private enum FocusTextfield {
-        case firstName
-    }
-    
+    private enum FocusTextfield {
+         case fieldInput
+     }
     
     @FocusState private var isFocusedOn: FocusTextfield?
     @Environment(\.dismiss) private var dismiss
-    @State private var firstName: String = ""
+    @State private var fieldInput: String = ""
     
     var body: some View {
         NavigationStack{
@@ -43,25 +42,13 @@ struct AboutYouScreen: View {
                     }
                     .padding(.horizontal, 25)
                     .padding(.top,20)
-                    .padding(.bottom,26)
+                    .padding(.bottom,30)
                     
                     
                     //Texts
                     VStack(spacing: 15){
-                        
-                        HStack {
-                            Text("STEP 1/5")
-                                .foregroundColor(.primary_400)
-                            .font(.system(size: 15, weight: .medium))
-                            
-                            
-                            Spacer()
-                        }
-                        .padding(.bottom, 5)
-                        
-                        
                         HStack{
-                            Text("About you")
+                            Text("Recover password")
                                 .foregroundColor(.neutral_10)
                                 .font(.system(size: 35, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -72,7 +59,7 @@ struct AboutYouScreen: View {
                         }
                         
                         HStack{
-                            Text("We love to get to know each other, tell us a little about yourself.")
+                            Text("Enter your email or phone number associated with your account.")
                                 .foregroundColor(.neutral_500)
                                 .font(.system(size: 18, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -83,16 +70,16 @@ struct AboutYouScreen: View {
                         }
                     }
                     .padding(.horizontal, 25)
-                    .padding(.bottom,10)
+                    .padding(.bottom,20)
                     
                     //Text field
                     VStack(spacing: 18){
                        
-                        //Full name textfield
+                        //input textfield
                         VStack(spacing: 10) {
                             
                             HStack{
-                                Text("Full name")
+                                Text("Username or email")
                                     .foregroundColor(.neutral_10)
                                     .font(.system(size: 12,weight: .medium))
                                 
@@ -101,14 +88,14 @@ struct AboutYouScreen: View {
                             .padding(.leading,10)
                             
                             ZStack(alignment: .leading) {
-                                if firstName.isEmpty {
-                                    Text("Mike Jenner")
+                                if fieldInput.isEmpty {
+                                    Text(verbatim: "example@mail.com")
                                         .foregroundColor(.neutral_400)
                                 }
-                                TextField("", text: $firstName)
+                                TextField("", text: $fieldInput)
                                     .foregroundColor(.neutral_10)
                                     .submitLabel(.done)
-                                    .focused($isFocusedOn, equals: .firstName)
+                                    .focused($isFocusedOn, equals: .fieldInput)
                                     .onSubmit {
                                         withAnimation {
                                             self.isFocusedOn = nil
@@ -123,7 +110,7 @@ struct AboutYouScreen: View {
                                     .foregroundColor(.neutral_800)
                                     .background{
                                         RoundedRectangle(cornerRadius: 15)
-                                            .stroke(isFocusedOn == .firstName ? Color.primary_300 : .clear, lineWidth: isFocusedOn == .firstName ? 2.8 : 0)
+                                            .stroke(isFocusedOn == .fieldInput ? Color.primary_300 : .clear, lineWidth: isFocusedOn == .fieldInput ? 2.8 : 0)
                                             .foregroundColor(.clear)
                                     }
                         }
@@ -143,64 +130,32 @@ struct AboutYouScreen: View {
                     .padding(.horizontal,20)
                     .padding(.top,20)
                     
-                    HStack{
-                        Button {
-                            
-                        } label: {
-                            HStack {
-                                
-                                Spacer()
-                                
-                                NavigationLink {
-                                    LoginScreen()
-                                } label: {
-                                    Text("Do you have already an account? Log in")
-                                        .underline()
-                                        .foregroundColor(.primary_400)
-                                    .font(.system(size: 12,weight: .medium))
-                                }
-                         
-                            }
-                            .padding(.horizontal,30)
-                            .padding(.top, 12)
-                        }
-
-                    }
                     
                     Spacer()
                     
                     //Buttons
                     VStack(spacing: 20){
                         NavigationLink {
-                            AddYourEmailScreen()
+                            AboutYouScreen()
                         } label: {
                             PrimaryPurpleButton(label: "continue")
-                        }  
+                        }
+
+
 
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom,20)
                 }
             }
-            .ignoresSafeArea(.keyboard)
         }
         .navigationBarBackButtonHidden(true)
         .preferredColorScheme(.dark)
-        .onTapGesture {
-            hideKeyboard()
-        }
     }
 }
 
-struct AboutYouScreen_Previews: PreviewProvider {
+struct RecoverPasswordScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro Max")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 13 mini")
+        RecoverPasswordScreen()
     }
 }

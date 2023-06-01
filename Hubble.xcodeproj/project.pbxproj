@@ -13,6 +13,11 @@
 		9E1152B62A27866C004CB460 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E1152B52A27866C004CB460 /* Preview Assets.xcassets */; };
 		9E1152BD2A278FE2004CB460 /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1152BC2A278FE2004CB460 /* ColorsHelper.swift */; };
 		9E1152C32A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1152C22A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift */; };
+		9E1152C82A28E27E004CB460 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1152C72A28E27E004CB460 /* LoginScreen.swift */; };
+		9E1152CA2A28E54C004CB460 /* LoginPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1152C92A28E54C004CB460 /* LoginPasswordScreen.swift */; };
+		9E1152CD2A28E91A004CB460 /* RecoverPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1152CC2A28E91A004CB460 /* RecoverPasswordScreen.swift */; };
+		9E1152CF2A28E9AF004CB460 /* AuthCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1152CE2A28E9AF004CB460 /* AuthCodeScreen.swift */; };
+		9E1152D12A28E9D8004CB460 /* CreateNewPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1152D02A28E9D8004CB460 /* CreateNewPasswordScreen.swift */; };
 		9E5224822A28978E004D030B /* AddYourEmailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5224812A28978E004D030B /* AddYourEmailScreen.swift */; };
 		9E5458192A27C86D003BA52D /* SquareGrayButtonWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458152A27C86D003BA52D /* SquareGrayButtonWithIcon.swift */; };
 		9E54581A2A27C86D003BA52D /* SecondaryGrayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458162A27C86D003BA52D /* SecondaryGrayButton.swift */; };
@@ -35,6 +40,11 @@
 		9E1152B52A27866C004CB460 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9E1152BC2A278FE2004CB460 /* ColorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsHelper.swift; sourceTree = "<group>"; };
 		9E1152C22A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulPaymentPlanScreen.swift; sourceTree = "<group>"; };
+		9E1152C72A28E27E004CB460 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		9E1152C92A28E54C004CB460 /* LoginPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordScreen.swift; sourceTree = "<group>"; };
+		9E1152CC2A28E91A004CB460 /* RecoverPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordScreen.swift; sourceTree = "<group>"; };
+		9E1152CE2A28E9AF004CB460 /* AuthCodeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeScreen.swift; sourceTree = "<group>"; };
+		9E1152D02A28E9D8004CB460 /* CreateNewPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordScreen.swift; sourceTree = "<group>"; };
 		9E5224812A28978E004D030B /* AddYourEmailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourEmailScreen.swift; sourceTree = "<group>"; };
 		9E5458152A27C86D003BA52D /* SquareGrayButtonWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareGrayButtonWithIcon.swift; sourceTree = "<group>"; };
 		9E5458162A27C86D003BA52D /* SecondaryGrayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryGrayButton.swift; sourceTree = "<group>"; };
@@ -82,6 +92,7 @@
 				9E1152AE2A27866B004CB460 /* HubbleApp.swift */,
 				9E1152B02A27866B004CB460 /* LaunchScreen.swift */,
 				9E54581E2A27C893003BA52D /* WelcomeScreen.swift */,
+				9E1152C52A28E257004CB460 /* Login */,
 				9E5458202A27C8A7003BA52D /* Onboarding */,
 				9E5458142A27C84B003BA52D /* Components */,
 				9E1152BE2A279476004CB460 /* Helpers */,
@@ -114,6 +125,26 @@
 				9E1152B22A27866C004CB460 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9E1152C52A28E257004CB460 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9E1152C62A28E26A004CB460 /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9E1152C62A28E26A004CB460 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E1152C72A28E27E004CB460 /* LoginScreen.swift */,
+				9E1152C92A28E54C004CB460 /* LoginPasswordScreen.swift */,
+				9E1152CC2A28E91A004CB460 /* RecoverPasswordScreen.swift */,
+				9E1152CE2A28E9AF004CB460 /* AuthCodeScreen.swift */,
+				9E1152D02A28E9D8004CB460 /* CreateNewPasswordScreen.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9E5458142A27C84B003BA52D /* Components */ = {
@@ -231,12 +262,17 @@
 				9E54581C2A27C86D003BA52D /* SecondaryGrayButtonWithIcon.swift in Sources */,
 				9E1152B12A27866B004CB460 /* LaunchScreen.swift in Sources */,
 				9E9A2E292A28A45E009A862C /* ChoseYourPlanScreen.swift in Sources */,
+				9E1152CD2A28E91A004CB460 /* RecoverPasswordScreen.swift in Sources */,
 				9E54581F2A27C893003BA52D /* WelcomeScreen.swift in Sources */,
 				9E843EBE2A27EA690044EABF /* Extentions.swift in Sources */,
+				9E1152CA2A28E54C004CB460 /* LoginPasswordScreen.swift in Sources */,
+				9E1152C82A28E27E004CB460 /* LoginScreen.swift in Sources */,
 				9E5458232A27C8C4003BA52D /* RegisterScreen.swift in Sources */,
 				9E5FA23A2A289AC8001B04EC /* CreateUsernameScreen.swift in Sources */,
 				9E54581B2A27C86D003BA52D /* PrimaryPurpleButton.swift in Sources */,
+				9E1152CF2A28E9AF004CB460 /* AuthCodeScreen.swift in Sources */,
 				9E5458252A27DD69003BA52D /* AboutYouScreen.swift in Sources */,
+				9E1152D12A28E9D8004CB460 /* CreateNewPasswordScreen.swift in Sources */,
 				9E54581A2A27C86D003BA52D /* SecondaryGrayButton.swift in Sources */,
 				9E5458192A27C86D003BA52D /* SquareGrayButtonWithIcon.swift in Sources */,
 				9E1152AF2A27866B004CB460 /* HubbleApp.swift in Sources */,

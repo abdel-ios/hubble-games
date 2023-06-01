@@ -66,8 +66,9 @@ struct WelcomeScreen: View {
                             }
 
 
-                            Button {
+                            NavigationLink {
                                 //Go to login flow
+                                LoginScreen()
                             } label: {
                                 SecondaryGrayButton(label: "I already have an account")
                             }

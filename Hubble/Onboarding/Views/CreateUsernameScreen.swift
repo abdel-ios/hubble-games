@@ -101,7 +101,7 @@ struct CreateUsernameScreen: View {
                             
                             ZStack(alignment: .leading) {
                                 if username.isEmpty {
-                                    Text("username")
+                                    Text("Enter username")
                                         .foregroundColor(.neutral_400)
                                 }
                                 TextField("", text: $username)
