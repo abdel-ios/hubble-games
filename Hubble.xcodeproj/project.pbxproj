@@ -30,6 +30,13 @@
 		9E5FA23C2A289CD9001B04EC /* CreatePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FA23B2A289CD9001B04EC /* CreatePasswordScreen.swift */; };
 		9E843EBE2A27EA690044EABF /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E843EBD2A27EA690044EABF /* Extentions.swift */; };
 		9E9A2E292A28A45E009A862C /* ChoseYourPlanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9A2E282A28A45E009A862C /* ChoseYourPlanScreen.swift */; };
+		9ED55D642A2905B800E1B2F1 /* AboutYourChildScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED55D632A2905B800E1B2F1 /* AboutYourChildScreen.swift */; };
+		9ED55D662A29065C00E1B2F1 /* AgeOfChildScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED55D652A29065C00E1B2F1 /* AgeOfChildScreen.swift */; };
+		9ED55D682A29127100E1B2F1 /* AboutParentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED55D672A29127100E1B2F1 /* AboutParentScreen.swift */; };
+		9ED55D6A2A2913DE00E1B2F1 /* AddParentEmailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED55D692A2913DE00E1B2F1 /* AddParentEmailScreen.swift */; };
+		9ED55D6C2A29155700E1B2F1 /* CreateUsernameForChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED55D6B2A29155700E1B2F1 /* CreateUsernameForChild.swift */; };
+		9ED55D6E2A2915B000E1B2F1 /* CreatePasswordForChildScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED55D6D2A2915B000E1B2F1 /* CreatePasswordForChildScreen.swift */; };
+		9ED55D702A2915FB00E1B2F1 /* ChosePlanForChildScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED55D6F2A2915FB00E1B2F1 /* ChosePlanForChildScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +64,13 @@
 		9E5FA23B2A289CD9001B04EC /* CreatePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordScreen.swift; sourceTree = "<group>"; };
 		9E843EBD2A27EA690044EABF /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		9E9A2E282A28A45E009A862C /* ChoseYourPlanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseYourPlanScreen.swift; sourceTree = "<group>"; };
+		9ED55D632A2905B800E1B2F1 /* AboutYourChildScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutYourChildScreen.swift; sourceTree = "<group>"; };
+		9ED55D652A29065C00E1B2F1 /* AgeOfChildScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeOfChildScreen.swift; sourceTree = "<group>"; };
+		9ED55D672A29127100E1B2F1 /* AboutParentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutParentScreen.swift; sourceTree = "<group>"; };
+		9ED55D692A2913DE00E1B2F1 /* AddParentEmailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParentEmailScreen.swift; sourceTree = "<group>"; };
+		9ED55D6B2A29155700E1B2F1 /* CreateUsernameForChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameForChild.swift; sourceTree = "<group>"; };
+		9ED55D6D2A2915B000E1B2F1 /* CreatePasswordForChildScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordForChildScreen.swift; sourceTree = "<group>"; };
+		9ED55D6F2A2915FB00E1B2F1 /* ChosePlanForChildScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosePlanForChildScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +183,7 @@
 		9E5458202A27C8A7003BA52D /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				9ED55D622A29058200E1B2F1 /* ForChild */,
 				9E5458212A27C8B9003BA52D /* Views */,
 			);
 			path = Onboarding;
@@ -186,6 +201,20 @@
 				9E1152C22A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9ED55D622A29058200E1B2F1 /* ForChild */ = {
+			isa = PBXGroup;
+			children = (
+				9ED55D632A2905B800E1B2F1 /* AboutYourChildScreen.swift */,
+				9ED55D652A29065C00E1B2F1 /* AgeOfChildScreen.swift */,
+				9ED55D672A29127100E1B2F1 /* AboutParentScreen.swift */,
+				9ED55D692A2913DE00E1B2F1 /* AddParentEmailScreen.swift */,
+				9ED55D6B2A29155700E1B2F1 /* CreateUsernameForChild.swift */,
+				9ED55D6D2A2915B000E1B2F1 /* CreatePasswordForChildScreen.swift */,
+				9ED55D6F2A2915FB00E1B2F1 /* ChosePlanForChildScreen.swift */,
+			);
+			path = ForChild;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,23 +291,30 @@
 				9E54581C2A27C86D003BA52D /* SecondaryGrayButtonWithIcon.swift in Sources */,
 				9E1152B12A27866B004CB460 /* LaunchScreen.swift in Sources */,
 				9E9A2E292A28A45E009A862C /* ChoseYourPlanScreen.swift in Sources */,
+				9ED55D6C2A29155700E1B2F1 /* CreateUsernameForChild.swift in Sources */,
 				9E1152CD2A28E91A004CB460 /* RecoverPasswordScreen.swift in Sources */,
 				9E54581F2A27C893003BA52D /* WelcomeScreen.swift in Sources */,
 				9E843EBE2A27EA690044EABF /* Extentions.swift in Sources */,
 				9E1152CA2A28E54C004CB460 /* LoginPasswordScreen.swift in Sources */,
 				9E1152C82A28E27E004CB460 /* LoginScreen.swift in Sources */,
+				9ED55D642A2905B800E1B2F1 /* AboutYourChildScreen.swift in Sources */,
 				9E5458232A27C8C4003BA52D /* RegisterScreen.swift in Sources */,
 				9E5FA23A2A289AC8001B04EC /* CreateUsernameScreen.swift in Sources */,
+				9ED55D6E2A2915B000E1B2F1 /* CreatePasswordForChildScreen.swift in Sources */,
 				9E54581B2A27C86D003BA52D /* PrimaryPurpleButton.swift in Sources */,
 				9E1152CF2A28E9AF004CB460 /* AuthCodeScreen.swift in Sources */,
+				9ED55D6A2A2913DE00E1B2F1 /* AddParentEmailScreen.swift in Sources */,
 				9E5458252A27DD69003BA52D /* AboutYouScreen.swift in Sources */,
 				9E1152D12A28E9D8004CB460 /* CreateNewPasswordScreen.swift in Sources */,
 				9E54581A2A27C86D003BA52D /* SecondaryGrayButton.swift in Sources */,
 				9E5458192A27C86D003BA52D /* SquareGrayButtonWithIcon.swift in Sources */,
 				9E1152AF2A27866B004CB460 /* HubbleApp.swift in Sources */,
+				9ED55D662A29065C00E1B2F1 /* AgeOfChildScreen.swift in Sources */,
 				9E1152BD2A278FE2004CB460 /* ColorsHelper.swift in Sources */,
+				9ED55D702A2915FB00E1B2F1 /* ChosePlanForChildScreen.swift in Sources */,
 				9E5224822A28978E004D030B /* AddYourEmailScreen.swift in Sources */,
 				9E1152C32A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift in Sources */,
+				9ED55D682A29127100E1B2F1 /* AboutParentScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

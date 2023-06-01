@@ -1,22 +1,22 @@
 //
-//  AboutYouScreen.swift
+//  AboutYourChildScreen.swift
 //  Hubble
 //
-//  Created by Abdel Baali on 31/05/23.
+//  Created by Abdel Baali on 01/06/23.
 //
 
 import SwiftUI
 
-struct AboutYouScreen: View {
+struct AboutYourChildScreen: View {
     
-   private enum FocusTextfield {
-        case fullname
-    }
-    
-    
-    @FocusState private var isFocusedOn: FocusTextfield?
-    @Environment(\.dismiss) private var dismiss
-    @State private var firstName: String = ""
+    private enum FocusTextfield {
+         case fullname
+     }
+     
+     
+     @FocusState private var isFocusedOn: FocusTextfield?
+     @Environment(\.dismiss) private var dismiss
+     @State private var firstName: String = ""
     
     var body: some View {
         NavigationStack{
@@ -50,7 +50,7 @@ struct AboutYouScreen: View {
                     VStack(spacing: 15){
                         
                         HStack {
-                            Text("STEP 1/5")
+                            Text("STEP 1/7")
                                 .foregroundColor(.primary_400)
                             .font(.system(size: 15, weight: .medium))
                             
@@ -61,7 +61,7 @@ struct AboutYouScreen: View {
                         
                         
                         HStack{
-                            Text("About you")
+                            Text("About your child")
                                 .foregroundColor(.neutral_10)
                                 .font(.system(size: 35, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -102,7 +102,7 @@ struct AboutYouScreen: View {
                             
                             ZStack(alignment: .leading) {
                                 if firstName.isEmpty {
-                                    Text("Mike Jenner")
+                                    Text("Jhon Jenner")
                                         .foregroundColor(.neutral_400)
                                 }
                                 TextField("", text: $firstName)
@@ -143,39 +143,16 @@ struct AboutYouScreen: View {
                     .padding(.horizontal,20)
                     .padding(.top,20)
                     
-                    HStack{
-                        Button {
-                            
-                        } label: {
-                            HStack {
-                                
-                                Spacer()
-                                
-                                NavigationLink {
-                                    LoginScreen()
-                                } label: {
-                                    Text("Do you have already an account? Log in")
-                                        .underline()
-                                        .foregroundColor(.primary_400)
-                                    .font(.system(size: 12,weight: .medium))
-                                }
-                         
-                            }
-                            .padding(.horizontal,30)
-                            .padding(.top, 12)
-                        }
-
-                    }
                     
                     Spacer()
                     
                     //Buttons
                     VStack(spacing: 20){
                         NavigationLink {
-                            AddYourEmailScreen()
+                            AgeOfChildScreen()
                         } label: {
                             PrimaryPurpleButton(label: "continue")
-                        }  
+                        }
 
                     }
                     .padding(.horizontal, 20)
@@ -192,15 +169,8 @@ struct AboutYouScreen: View {
     }
 }
 
-struct AboutYouScreen_Previews: PreviewProvider {
+struct AboutYourChildScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro Max")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 13 mini")
+        AboutYourChildScreen()
     }
 }

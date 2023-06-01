@@ -1,22 +1,21 @@
 //
-//  AboutYouScreen.swift
+//  AboutParentScreen.swift
 //  Hubble
 //
-//  Created by Abdel Baali on 31/05/23.
+//  Created by Abdel Baali on 01/06/23.
 //
 
 import SwiftUI
 
-struct AboutYouScreen: View {
+struct AboutParentScreen: View {
     
-   private enum FocusTextfield {
-        case fullname
-    }
-    
-    
-    @FocusState private var isFocusedOn: FocusTextfield?
-    @Environment(\.dismiss) private var dismiss
-    @State private var firstName: String = ""
+    private enum FocusTextfield {
+         case fullname
+     }
+
+     @FocusState private var isFocusedOn: FocusTextfield?
+     @Environment(\.dismiss) private var dismiss
+     @State private var firstName: String = ""
     
     var body: some View {
         NavigationStack{
@@ -50,7 +49,7 @@ struct AboutYouScreen: View {
                     VStack(spacing: 15){
                         
                         HStack {
-                            Text("STEP 1/5")
+                            Text("STEP 2/7")
                                 .foregroundColor(.primary_400)
                             .font(.system(size: 15, weight: .medium))
                             
@@ -92,7 +91,7 @@ struct AboutYouScreen: View {
                         VStack(spacing: 10) {
                             
                             HStack{
-                                Text("Full name")
+                                Text("Parent's full name")
                                     .foregroundColor(.neutral_10)
                                     .font(.system(size: 12,weight: .medium))
                                 
@@ -143,39 +142,21 @@ struct AboutYouScreen: View {
                     .padding(.horizontal,20)
                     .padding(.top,20)
                     
-                    HStack{
-                        Button {
-                            
-                        } label: {
-                            HStack {
-                                
-                                Spacer()
-                                
-                                NavigationLink {
-                                    LoginScreen()
-                                } label: {
-                                    Text("Do you have already an account? Log in")
-                                        .underline()
-                                        .foregroundColor(.primary_400)
-                                    .font(.system(size: 12,weight: .medium))
-                                }
-                         
-                            }
-                            .padding(.horizontal,30)
-                            .padding(.top, 12)
-                        }
-
-                    }
                     
                     Spacer()
                     
                     //Buttons
                     VStack(spacing: 20){
+                        
+                        Text("*By proceeding you certify that you are at least 18 years of age")
+                            .foregroundColor(.neutral_500)
+                            .font(.system(size: 11,weight: .regular))
+                        
                         NavigationLink {
-                            AddYourEmailScreen()
+                            AddParentEmailScreen()
                         } label: {
                             PrimaryPurpleButton(label: "continue")
-                        }  
+                        }
 
                     }
                     .padding(.horizontal, 20)
@@ -192,15 +173,8 @@ struct AboutYouScreen: View {
     }
 }
 
-struct AboutYouScreen_Previews: PreviewProvider {
+struct AboutParentScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro Max")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 13 mini")
+        AboutParentScreen()
     }
 }

@@ -1,22 +1,21 @@
 //
-//  AboutYouScreen.swift
+//  CreateUsernameForChild.swift
 //  Hubble
 //
-//  Created by Abdel Baali on 31/05/23.
+//  Created by Abdel Baali on 01/06/23.
 //
 
 import SwiftUI
 
-struct AboutYouScreen: View {
+struct CreateUsernameForChild: View {
     
-   private enum FocusTextfield {
-        case fullname
+    private enum FocusTextField {
+        case username
     }
     
-    
-    @FocusState private var isFocusedOn: FocusTextfield?
+    @FocusState private var isFocusedOn: FocusTextField?
     @Environment(\.dismiss) private var dismiss
-    @State private var firstName: String = ""
+    @State private var username: String = ""
     
     var body: some View {
         NavigationStack{
@@ -33,7 +32,7 @@ struct AboutYouScreen: View {
                         } label: {
                             SquareGrayButtonWithIcon(icon: "arrow-left")
                         }
-           
+                        
                         Spacer()
                         
                         Image("icon-logo-primary-500")
@@ -50,9 +49,9 @@ struct AboutYouScreen: View {
                     VStack(spacing: 15){
                         
                         HStack {
-                            Text("STEP 1/5")
+                            Text("STEP 5/7")
                                 .foregroundColor(.primary_400)
-                            .font(.system(size: 15, weight: .medium))
+                                .font(.system(size: 15, weight: .medium))
                             
                             
                             Spacer()
@@ -61,7 +60,7 @@ struct AboutYouScreen: View {
                         
                         
                         HStack{
-                            Text("About you")
+                            Text("Create username")
                                 .foregroundColor(.neutral_10)
                                 .font(.system(size: 35, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -72,7 +71,7 @@ struct AboutYouScreen: View {
                         }
                         
                         HStack{
-                            Text("We love to get to know each other, tell us a little about yourself.")
+                            Text("Create a unique username that represents you so your friends can recognise you")
                                 .foregroundColor(.neutral_500)
                                 .font(.system(size: 18, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -85,14 +84,14 @@ struct AboutYouScreen: View {
                     .padding(.horizontal, 25)
                     .padding(.bottom,10)
                     
-                    //Text field
+                    //Text fields
                     VStack(spacing: 18){
-                       
-                        //Full name textfield
+                        
+                        //Username textfield
                         VStack(spacing: 10) {
                             
                             HStack{
-                                Text("Full name")
+                                Text("Create username")
                                     .foregroundColor(.neutral_10)
                                     .font(.system(size: 12,weight: .medium))
                                 
@@ -101,19 +100,28 @@ struct AboutYouScreen: View {
                             .padding(.leading,10)
                             
                             ZStack(alignment: .leading) {
-                                if firstName.isEmpty {
-                                    Text("Mike Jenner")
+                                if username.isEmpty {
+                                    Text("Enter username")
                                         .foregroundColor(.neutral_400)
                                 }
-                                TextField("", text: $firstName)
+                                TextField("", text: $username)
                                     .foregroundColor(.neutral_10)
                                     .submitLabel(.done)
-                                    .focused($isFocusedOn, equals: .fullname)
+                                    .focused($isFocusedOn, equals: .username)
                                     .onSubmit {
                                         withAnimation {
                                             self.isFocusedOn = nil
                                         }
                                     }
+                                
+                                HStack{
+                                    Spacer()
+                                    
+                                    Image(systemName: "checkmark.circle")
+                                        .font(.system(size: 19,weight: .regular))
+                                        .foregroundColor(Color.green_300)
+                                        
+                                }
                             }
                             .padding(10)
                             .padding(.horizontal,10)
@@ -123,60 +131,39 @@ struct AboutYouScreen: View {
                                     .foregroundColor(.neutral_800)
                                     .background{
                                         RoundedRectangle(cornerRadius: 15)
-                                            .stroke(isFocusedOn == .fullname ? Color.primary_300 : .clear, lineWidth: isFocusedOn == .fullname ? 2.8 : 0)
+                                            .stroke(isFocusedOn == .username ? Color.primary_300 : .clear, lineWidth: isFocusedOn == .username ? 2.8 : 0)
                                             .foregroundColor(.clear)
                                     }
-                        }
+                            }
                             
                         }
                         
+                        //Error text
                         HStack {
                             Text("Error text")
                                 .foregroundColor(Color.red_500)
-                            .font(.system(size: 12,weight: .medium))
+                                .font(.system(size: 12,weight: .medium))
                             
                             Spacer()
                         }
                         .padding(.leading,10)
                         
+                        
                     }
                     .padding(.horizontal,20)
                     .padding(.top,20)
                     
-                    HStack{
-                        Button {
-                            
-                        } label: {
-                            HStack {
-                                
-                                Spacer()
-                                
-                                NavigationLink {
-                                    LoginScreen()
-                                } label: {
-                                    Text("Do you have already an account? Log in")
-                                        .underline()
-                                        .foregroundColor(.primary_400)
-                                    .font(.system(size: 12,weight: .medium))
-                                }
-                         
-                            }
-                            .padding(.horizontal,30)
-                            .padding(.top, 12)
-                        }
-
-                    }
                     
                     Spacer()
                     
                     //Buttons
                     VStack(spacing: 20){
                         NavigationLink {
-                            AddYourEmailScreen()
+                            CreateUsernameForChild()
                         } label: {
                             PrimaryPurpleButton(label: "continue")
-                        }  
-
+                        }
+        
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom,20)
@@ -192,15 +179,8 @@ struct AboutYouScreen: View {
     }
 }
 
-struct AboutYouScreen_Previews: PreviewProvider {
+struct CreateUsernameForChild_Previews: PreviewProvider {
     static var previews: some View {
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro Max")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 13 mini")
+        CreateUsernameForChild()
     }
 }

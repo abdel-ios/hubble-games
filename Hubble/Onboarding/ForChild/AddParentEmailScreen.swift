@@ -1,22 +1,21 @@
 //
-//  AboutYouScreen.swift
+//  AddParentEmailScreen.swift
 //  Hubble
 //
-//  Created by Abdel Baali on 31/05/23.
+//  Created by Abdel Baali on 01/06/23.
 //
 
 import SwiftUI
 
-struct AboutYouScreen: View {
+struct AddParentEmailScreen: View {
     
-   private enum FocusTextfield {
-        case fullname
+    private enum FocusTextField {
+        case email
     }
     
-    
-    @FocusState private var isFocusedOn: FocusTextfield?
+    @FocusState private var isFocusedOn: FocusTextField?
     @Environment(\.dismiss) private var dismiss
-    @State private var firstName: String = ""
+    @State private var email: String = ""
     
     var body: some View {
         NavigationStack{
@@ -33,7 +32,7 @@ struct AboutYouScreen: View {
                         } label: {
                             SquareGrayButtonWithIcon(icon: "arrow-left")
                         }
-           
+                        
                         Spacer()
                         
                         Image("icon-logo-primary-500")
@@ -50,9 +49,9 @@ struct AboutYouScreen: View {
                     VStack(spacing: 15){
                         
                         HStack {
-                            Text("STEP 1/5")
+                            Text("STEP 4/7")
                                 .foregroundColor(.primary_400)
-                            .font(.system(size: 15, weight: .medium))
+                                .font(.system(size: 15, weight: .medium))
                             
                             
                             Spacer()
@@ -61,7 +60,7 @@ struct AboutYouScreen: View {
                         
                         
                         HStack{
-                            Text("About you")
+                            Text("Add your email")
                                 .foregroundColor(.neutral_10)
                                 .font(.system(size: 35, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -72,7 +71,7 @@ struct AboutYouScreen: View {
                         }
                         
                         HStack{
-                            Text("We love to get to know each other, tell us a little about yourself.")
+                            Text("We want to be able to communicate with you, add you email address.")
                                 .foregroundColor(.neutral_500)
                                 .font(.system(size: 18, weight: .medium))
                                 .multilineTextAlignment(.leading)
@@ -87,12 +86,12 @@ struct AboutYouScreen: View {
                     
                     //Text field
                     VStack(spacing: 18){
-                       
-                        //Full name textfield
+                        
+                        //First name textfield
                         VStack(spacing: 10) {
                             
                             HStack{
-                                Text("Full name")
+                                Text("Your email")
                                     .foregroundColor(.neutral_10)
                                     .font(.system(size: 12,weight: .medium))
                                 
@@ -101,14 +100,14 @@ struct AboutYouScreen: View {
                             .padding(.leading,10)
                             
                             ZStack(alignment: .leading) {
-                                if firstName.isEmpty {
-                                    Text("Mike Jenner")
+                                if email.isEmpty {
+                                    Text(verbatim: "example@mail.com")
                                         .foregroundColor(.neutral_400)
                                 }
-                                TextField("", text: $firstName)
+                                TextField("", text: $email)
                                     .foregroundColor(.neutral_10)
                                     .submitLabel(.done)
-                                    .focused($isFocusedOn, equals: .fullname)
+                                    .focused($isFocusedOn, equals: .email)
                                     .onSubmit {
                                         withAnimation {
                                             self.isFocusedOn = nil
@@ -123,60 +122,51 @@ struct AboutYouScreen: View {
                                     .foregroundColor(.neutral_800)
                                     .background{
                                         RoundedRectangle(cornerRadius: 15)
-                                            .stroke(isFocusedOn == .fullname ? Color.primary_300 : .clear, lineWidth: isFocusedOn == .fullname ? 2.8 : 0)
+                                            .stroke(isFocusedOn == .email ? Color.primary_300 : .clear, lineWidth: isFocusedOn == .email ? 2.8 : 0)
                                             .foregroundColor(.clear)
                                     }
-                        }
+                            }
                             
                         }
                         
+                        //Error text
                         HStack {
                             Text("Error text")
                                 .foregroundColor(Color.red_500)
-                            .font(.system(size: 12,weight: .medium))
+                                .font(.system(size: 12,weight: .medium))
                             
                             Spacer()
                         }
                         .padding(.leading,10)
                         
+                        HStack {
+                            
+                            Spacer()
+                            
+                            Text("*This email address will be used to log in to the platform")
+                                .foregroundColor(.neutral_500)
+                                .font(.system(size: 11,weight: .regular))
+                     
+                        }
+                        .padding(.horizontal,10)
+                        .padding(.top, 12)
+                        
+                        
                     }
                     .padding(.horizontal,20)
                     .padding(.top,20)
                     
-                    HStack{
-                        Button {
-                            
-                        } label: {
-                            HStack {
-                                
-                                Spacer()
-                                
-                                NavigationLink {
-                                    LoginScreen()
-                                } label: {
-                                    Text("Do you have already an account? Log in")
-                                        .underline()
-                                        .foregroundColor(.primary_400)
-                                    .font(.system(size: 12,weight: .medium))
-                                }
-                         
-                            }
-                            .padding(.horizontal,30)
-                            .padding(.top, 12)
-                        }
-
-                    }
                     
                     Spacer()
                     
                     //Buttons
                     VStack(spacing: 20){
                         NavigationLink {
-                            AddYourEmailScreen()
+                            CreateUsernameForChild()
                         } label: {
                             PrimaryPurpleButton(label: "continue")
-                        }  
-
+                        }
+                        
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom,20)
@@ -189,18 +179,13 @@ struct AboutYouScreen: View {
         .onTapGesture {
             hideKeyboard()
         }
+        
     }
 }
 
-struct AboutYouScreen_Previews: PreviewProvider {
+
+struct AddParentEmailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 14 Pro Max")
-        
-        AboutYouScreen()
-            .previewDevice("iPhone 13 mini")
+        AddParentEmailScreen()
     }
 }
