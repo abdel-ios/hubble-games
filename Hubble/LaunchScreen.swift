@@ -26,7 +26,7 @@ struct LaunchScreen: View {
                     Image("exp-logo-purple")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 190, height: 190)
+                        .frame(width: 200, height: 200)
                         .offset(x: -5)
                         .padding(.top, 30)
                     

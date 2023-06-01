@@ -22,7 +22,7 @@ struct ChoseYourPlanScreen: View {
         NavigationStack{
             if showWelcomeScreen {
                 WelcomeScreen()
-            }else {
+            } else {
                 ZStack{
                     Color.neutral_900.ignoresSafeArea()
                     
@@ -227,6 +227,7 @@ struct ChoseYourPlanScreen: View {
                         .padding(.bottom,10)
                     }
                 }
+                .blur(radius: showAlert ? 3 : 0)
             }
            
             
