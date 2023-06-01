@@ -12,6 +12,7 @@
 		9E1152B32A27866C004CB460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E1152B22A27866C004CB460 /* Assets.xcassets */; };
 		9E1152B62A27866C004CB460 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E1152B52A27866C004CB460 /* Preview Assets.xcassets */; };
 		9E1152BD2A278FE2004CB460 /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1152BC2A278FE2004CB460 /* ColorsHelper.swift */; };
+		9E1152C32A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1152C22A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift */; };
 		9E5224822A28978E004D030B /* AddYourEmailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5224812A28978E004D030B /* AddYourEmailScreen.swift */; };
 		9E5458192A27C86D003BA52D /* SquareGrayButtonWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458152A27C86D003BA52D /* SquareGrayButtonWithIcon.swift */; };
 		9E54581A2A27C86D003BA52D /* SecondaryGrayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5458162A27C86D003BA52D /* SecondaryGrayButton.swift */; };
@@ -33,6 +34,7 @@
 		9E1152B22A27866C004CB460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E1152B52A27866C004CB460 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9E1152BC2A278FE2004CB460 /* ColorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsHelper.swift; sourceTree = "<group>"; };
+		9E1152C22A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulPaymentPlanScreen.swift; sourceTree = "<group>"; };
 		9E5224812A28978E004D030B /* AddYourEmailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourEmailScreen.swift; sourceTree = "<group>"; };
 		9E5458152A27C86D003BA52D /* SquareGrayButtonWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareGrayButtonWithIcon.swift; sourceTree = "<group>"; };
 		9E5458162A27C86D003BA52D /* SecondaryGrayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryGrayButton.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				9E5FA2392A289AC8001B04EC /* CreateUsernameScreen.swift */,
 				9E5FA23B2A289CD9001B04EC /* CreatePasswordScreen.swift */,
 				9E9A2E282A28A45E009A862C /* ChoseYourPlanScreen.swift */,
+				9E1152C22A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				9E1152AF2A27866B004CB460 /* HubbleApp.swift in Sources */,
 				9E1152BD2A278FE2004CB460 /* ColorsHelper.swift in Sources */,
 				9E5224822A28978E004D030B /* AddYourEmailScreen.swift in Sources */,
+				9E1152C32A28D1C6004CB460 /* SuccessfulPaymentPlanScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
